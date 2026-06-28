@@ -49,8 +49,7 @@ function localParaIso(valorLocal) {
 // Converte uma data ISO vinda da API para o formato aceito por <input type="datetime-local">
 function isoParaLocal(iso) {
   const data = new Date(iso);
-  const pad = (n) => String(n).padStart(2, '0');
-  return `${data.getFullYear()}-${pad(data.getMonth() + 1)}-${pad(data.getDate())}T${pad(data.getHours())}:${pad(data.getMinutes())}`;
+  return data.toISOString().slice(0, 16);
 }
 
 // ---------- Validação client-side (item 2 do trabalho) ----------
