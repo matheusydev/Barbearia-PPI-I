@@ -325,12 +325,55 @@ tbody tr:hover {
   font-size: 14px;
 }
 
+
+/* =========================================
+   RESPONSIVIDADE (Celulares e Tablets)
+========================================= */
 @media (max-width: 600px) {
+  /* 1. O Cabeçalho: Centraliza a logo, o menu e o botão de tema */
   header.topo {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  nav.menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* 2. Os Formulários: Força os campos a ficarem um embaixo do outro */
+  .linha-form {
+    grid-template-columns: 1fr; /* Remove as colunas e cria 1 linha única */
+  }
+
+  /* Faz os botões ocuparem a largura total da tela para facilitar o clique com o dedo */
+  .acoes-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .acoes-form button {
+    width: 100%;
+  }
+
+  /* 3. A Barra de Listagem: Empilha a pesquisa/ordenação */
+  .barra-listagem {
     flex-direction: column;
     align-items: stretch;
   }
-  nav.menu {
-    justify-content: center;
+
+  /* 4. Scroll Horizontal da Tabela */
+  .cartao {
+    overflow-x: auto; 
+  }
+
+  /* Força a tabela a ter um tamanho mínimo. 
+     Se a tela do celular for menor que 500px, a tabela não esmaga, 
+     ela cria a barra de rolagem para o lado */
+  table {
+    min-width: 500px; 
   }
 }
+
