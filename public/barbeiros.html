@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barbeiros — Barbearia PPI-I</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="topo">
+    <div class="marca">💈 Barbearia PPI-I</div>
+    <nav class="menu">
+      <a href="barbeiros.html" class="ativo">Barbeiros</a>
+      <a href="agendamentos.html">Agendamentos</a>
+    </nav>
+    <button id="alternar-tema">🌙 Escuro</button>
+  </header>
+
+  <main>
+    <h1>Barbeiros</h1>
+    <p class="subtitulo">Cadastre e gerencie os barbeiros da equipe.</p>
+
+    <div id="aviso-offline" class="aviso-offline">
+      Não foi possível conectar ao servidor. Exibindo os últimos dados salvos neste navegador.
+    </div>
+
+    <section class="cartao">
+      <h2 id="titulo-form">Novo barbeiro</h2>
+      <form id="form-barbeiro" novalidate>
+        <input type="hidden" id="barbeiro-id" />
+        <div class="linha-form">
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex.: João Silva" />
+            <span class="erro-campo" id="erro-nome"></span>
+          </div>
+          <div class="campo">
+            <label for="especialidade">Especialidade</label>
+            <input type="text" id="especialidade" name="especialidade" placeholder="Ex.: Degrade e barba" />
+            <span class="erro-campo" id="erro-especialidade"></span>
+          </div>
+          <div class="campo">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" name="telefone" placeholder="Ex.: (86) 99999-0000" />
+            <span class="erro-campo" id="erro-telefone"></span>
+          </div>
+        </div>
+        <div id="mensagem-form" class="mensagem"></div>
+        <div class="acoes-form">
+          <button type="submit" class="botao" id="botao-salvar">Cadastrar</button>
+          <button type="button" class="botao secundario" id="botao-cancelar" style="display:none;">Cancelar edição</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="cartao">
+      <div class="barra-listagem">
+        <h2 style="margin:0;">Lista de barbeiros</h2>
+        <div class="campo" style="flex-direction:row; align-items:center; gap:8px;">
+          <label for="ordenacao" style="margin:0;">Ordenar por</label>
+          <select id="ordenacao">
+            <option value="nome-asc">Nome (A-Z)</option>
+            <option value="nome-desc">Nome (Z-A)</option>
+            <option value="especialidade-asc">Especialidade (A-Z)</option>
+          </select>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Especialidade</th>
+            <th>Telefone</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="lista-barbeiros">
+          <tr><td colspan="5" class="vazio">Carregando...</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/theme.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/barbeiros.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendamentos — Barbearia PPI-I</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="topo">
+    <div class="marca">💈 Barbearia PPI-I</div>
+    <nav class="menu">
+      <a href="barbeiros.html">Barbeiros</a>
+      <a href="agendamentos.html" class="ativo">Agendamentos</a>
+    </nav>
+    <button id="alternar-tema">🌙 Escuro</button>
+  </header>
+
+  <main>
+    <h1>Agendamentos</h1>
+    <p class="subtitulo">Cadastre e gerencie os agendamentos dos clientes.</p>
+
+    <div id="aviso-offline" class="aviso-offline">
+      Não foi possível conectar ao servidor. Exibindo os últimos dados salvos neste navegador.
+    </div>
+
+    <section class="cartao">
+      <h2 id="titulo-form">Novo agendamento</h2>
+      <form id="form-agendamento" novalidate>
+        <input type="hidden" id="agendamento-id" />
+        <div class="linha-form">
+          <div class="campo">
+            <label for="clienteNome">Cliente</label>
+            <input type="text" id="clienteNome" name="clienteNome" placeholder="Ex.: Maria Souza" />
+            <span class="erro-campo" id="erro-clienteNome"></span>
+          </div>
+          <div class="campo">
+            <label for="clienteTelefone">Telefone</label>
+            <input type="text" id="clienteTelefone" name="clienteTelefone" placeholder="Ex.: (86) 99999-0000" />
+            <span class="erro-campo" id="erro-clienteTelefone"></span>
+          </div>
+          <div class="campo">
+            <label for="servico">Serviço</label>
+            <select id="servico" name="servico">
+              <option value="">Selecione...</option>
+              <option value="Corte">Corte</option>
+              <option value="Barba">Barba</option>
+              <option value="Corte + Barba">Corte + Barba</option>
+              <option value="Hidratação">Hidratação</option>
+              <option value="Relaxamento">Relaxamento</option>
+            </select>
+            <span class="erro-campo" id="erro-servico"></span>
+          </div>
+        </div>
+        <div class="linha-form">
+          <div class="campo">
+            <label for="dataHora">Data e hora</label>
+            <input type="datetime-local" id="dataHora" name="dataHora" />
+            <span class="erro-campo" id="erro-dataHora"></span>
+          </div>
+          <div class="campo">
+            <label for="barbeiro">Barbeiro</label>
+            <select id="barbeiro" name="barbeiro">
+              <option value="">Selecione...</option>
+            </select>
+            <span class="erro-campo" id="erro-barbeiro"></span>
+          </div>
+          <div class="campo" id="campo-status" style="display:none;">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+              <option value="Agendado">Agendado</option>
+              <option value="Concluído">Concluído</option>
+              <option value="Cancelado">Cancelado</option>
+            </select>
+          </div>
+        </div>
+        <div id="mensagem-form" class="mensagem"></div>
+        <div class="acoes-form">
+          <button type="submit" class="botao" id="botao-salvar">Agendar</button>
+          <button type="button" class="botao secundario" id="botao-cancelar" style="display:none;">Cancelar edição</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="cartao">
+      <div class="barra-listagem">
+        <h2 style="margin:0;">Lista de agendamentos</h2>
+        <div class="campo" style="flex-direction:row; align-items:center; gap:8px;">
+          <label for="ordenacao" style="margin:0;">Ordenar por</label>
+          <select id="ordenacao">
+            <option value="data-asc">Data/hora (mais próximos)</option>
+            <option value="data-desc">Data/hora (mais distantes)</option>
+            <option value="status">Status</option>
+            <option value="cliente">Cliente (A-Z)</option>
+          </select>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Serviço</th>
+            <th>Data/hora</th>
+            <th>Barbeiro</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="lista-agendamentos">
+          <tr><td colspan="6" class="vazio">Carregando...</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/theme.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/agendamentos.js"></script>
+</body>
+</html>
