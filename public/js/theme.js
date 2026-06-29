@@ -8,7 +8,7 @@
     document.documentElement.setAttribute('data-tema', tema);
     const botao = document.getElementById('alternar-tema');
     if (botao) {
-      botao.textContent = tema === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+      botao.textContent = tema === 'dark' ? 'Claro' : 'Escuro';
     }
   }
 
