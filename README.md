@@ -1,6 +1,6 @@
 <div align="center">
 
-# 💈 Barbearia PPI-I
+# 💈 Barbearia Barba Negra
 
 Sistema full-stack para gerenciamento de uma barbearia, desenvolvido em grupo como trabalho da disciplina **Programação para Internet I**. Inclui uma API REST (Node.js + Express + MongoDB) e um front-end completo (HTML, CSS vaScript puro) para cadastro de barbeiros e agendamentos de clientes, em uma relação mestre-detalhe.
 
