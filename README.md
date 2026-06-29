@@ -2,11 +2,11 @@
 
 # 💈 Barbearia PPI-I
 
-Sistema full-stack para gerenciamento de uma barbearia, desenvolvido em grupo como trabalho da disciplina **Programação para Internet I**. Inclui uma API REST (Node.js + Express + MongoDB) e um front-end completo (HTML, CSS e JavaScript puro) para cadastro de barbeiros e agendamentos de clientes, em uma relação mestre-detalhe.
+Sistema full-stack para gerenciamento de uma barbearia, desenvolvido em grupo como trabalho da disciplina **Programação para Internet I**. Inclui uma API REST (Node.js + Express + MongoDB) e um front-end completo (HTML, CSS vaScript puro) para cadastro de barbeiros e agendamentos de clientes, em uma relação mestre-detalhe.
 
-<!-- 🔗 **Hospedagem:** em desenvolvimento
+🔗 **Hospedagem:** https://barbearia-ppi-i.onrender.com
 
-🎥 **Vídeo de apresentação:** em desenvolvimento -->
+<!-- 🎥 **Vídeo de apresentação:** em desenvolvimento -->
 
 <br/>
 
