@@ -6,7 +6,7 @@ Sistema full-stack para gerenciamento de uma barbearia, desenvolvido em grupo co
 
 🔗 **Hospedagem:** https://barbearia-ppi-i.onrender.com
 
-<!-- 🎥 **Vídeo de apresentação:** em desenvolvimento -->
+🎥 **Vídeo de apresentação:** https://youtu.be/eXhzTakArdc
 
 <br/>
 
